@@ -1,0 +1,274 @@
+/* ====== Start Basic Style ====== */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;800&display=swap');
+:root {
+    --mainColor: #ff7220;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+body[lang="ar"] {
+    direction: rtl;
+    text-align: right;
+}
+
+body[lang="en"] {
+    direction: ltr;
+    text-align: left;
+}
+
+.navbar{
+    background-color: white;
+}
+
+.navbar-brand {
+    font-size: 1rem;
+    color: #000;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    color: #000;
+    text-transform: uppercase;
+    font-size: .875rem;
+}
+
+.navbar-nav .nav-link.active {
+    color: var(--mainColor);
+}
+
+.navbar-brand img {
+    height: 100px;
+    width: 200px;
+    object-fit: contain;
+}
+
+.btn-language {
+    background-color: white;
+    color: black;
+    border: 1px solid #ccc;
+}
+
+.btn-language:hover, .btn-language:focus {
+    background-color: white;
+    color: black;
+}
+
+.dropdown-menu {
+    min-width: 150px;
+}
+
+.slider {
+    padding-top: 100px;
+}
+
+.title h1 {
+    font-size: 3rem; /* Size of the title */
+    color: #333; /* Color of the text */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    padding: 20px; /* Padding around the text */
+    background: white; /* Background for the title */
+    transition: transform 0.3s ease; /* Smooth scaling effect */
+}
+
+/*
+.home-info {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+
+.projects {
+    padding: 60px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+/* .project-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+} */
+
+/* .project-card img {
+    max-width: 100%;
+    height: 100%;
+    border-radius: 3px;
+    object-fit: cover;
+} */
+
+.project-card {
+    position: relative; /* Positioning context for the overlay */
+    overflow: hidden; /* Hide overflow */
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px; /* Set a fixed height */
+    object-fit: cover;
+    border-radius: 3px;
+    transition: opacity 0.3s ease; /* Transition for opacity */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: white;
+    display: flex;
+    justify-content: space-between; /* Space items to the edges */
+    align-items: flex-end; /* Align items to the bottom */
+    padding: 10px; /* Add some padding */
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.3s ease; /* Transition for overlay */
+}
+
+.project-card:hover img {
+    opacity: 0.7; /* Reduce opacity on hover */
+}
+
+.project-card:hover .overlay {
+    opacity: 1; /* Show overlay on hover */
+}
+
+.overlay h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    align-self: self-end;
+}
+
+.overlay i {
+    cursor: pointer; /* Change cursor to pointer */
+    transition: color 0.3s ease; /* Transition for color change */
+}
+
+.overlay i.liked {
+    color: var(--mainColor); /* Change color when liked */
+}
+
+
+.overlay h3 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.home-bar {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+}
+
+.home-bar a {
+    color: var(--mainColor);
+    font-size: .875rem;
+}
+
+@media(max-width: 767px) {
+    .navbar {
+        background-color: #fff;
+    }
+}
+
+/* Overlay styling */
+.over {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Dark transparent background */
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto; /* Makes overlay scrollable */
+    padding: 20px; /* Adds some padding around the content */
+}
+
+/* Center the content */
+.over-content {
+    background-color: white;
+    padding: 20px;
+    max-width: 70%;
+    border-radius: 8px;
+    text-align: center;
+    padding-top: 12%;
+}
+
+/* Container for images */
+.image-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Adds space between images */
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+/* Styling for images inside the overlay */
+.image-container img {
+    max-width: 100%;
+    /* height: auto; */
+    object-fit: contain;
+    /* max-height: 400px; Limit the height to avoid oversized images */
+    border-radius: 8px;
+}
+  
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #000;
+  }
+
+  .image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Two columns */
+    gap: 10px; /* Gap between images */
+    margin-top: 20px; /* Add some margin to the top */
+  }
+    
+  .grid-image {
+    width: 100%; /* Ensure images fill the grid space */
+    height: 400px; /* Set a fixed height to ensure uniform size */
+    object-fit: cover; /* Keep aspect ratio and crop if necessary */
+  }
+
+/* Responsive handling for smaller screens */
+@media (max-width: 768px) {
+    .over-content {
+        max-width: 100%;
+        padding: 15px;
+    }
+    .image-container img {
+        max-height: 300px;
+    }
+}
+
+.project-card .overlay .fa-heart {
+    margin-right: 10px; /* Adjust the spacing as needed */
+  }
+  

@@ -1,0 +1,98 @@
+.home{
+    background-image:url('../images/Square_bg.png');
+    height:100vh;
+    /* background-size: cover;
+    background-position: center;
+    position:relative;  */
+}
+/* 
+.home-info {
+    height:100vh;
+} */
+
+.home .home-title{
+    color:#000000;
+    font-size:3rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    
+}
+
+.home h2 {
+    color:#000000;
+    font-weight: 400;
+}
+
+.home a{
+    color:var(--mainColor);
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.home-bar{
+    position:absolute;
+    bottom:1rem;
+    left:1rem;
+    right:1rem;
+}
+
+.home-bar a{
+    color:var(--mainColor);
+    font-size:.875rem;
+}
+.w-20{
+    width:20%;
+}
+.home-effect {
+    opacity:0;
+    animation:text-opacity .9s;
+    animation-fill-mode:forwards;
+    position: relative;
+    animation-delay: 1.35s;
+}
+.home-effect:after {
+    content:'';
+    top:0;
+    left:0;
+    background-color: #000000;
+    width:0%;
+    height:100%;
+    top:0;
+    left:0;
+    position: absolute;
+    animation: block 1.5s;
+    animation-delay: 1s;
+
+}
+@keyframes block {
+    0%{
+        left:0;
+        width:0%;
+    }
+    75%{
+         left:0;
+        width:100%; 
+    }
+    100%{
+         left:100%;
+        width:0%; 
+    }
+}
+
+@keyframes text-opacity {
+    0%{
+       
+        opacity:0;
+    }
+    75%{
+        opacity:0;
+   }
+    100%{
+        opacity:1;
+
+    }
+}
+
+
+
+
